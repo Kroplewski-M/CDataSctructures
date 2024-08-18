@@ -1,3 +1,0 @@
-/home/mateusz/Documents/Repos/C/DataStructures/cmake-build-debug/CMakeFiles/DataStructures.dir
-/home/mateusz/Documents/Repos/C/DataStructures/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/mateusz/Documents/Repos/C/DataStructures/cmake-build-debug/CMakeFiles/rebuild_cache.dir
