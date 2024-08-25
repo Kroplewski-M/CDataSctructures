@@ -5,18 +5,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void addNodeEnd(node **head,int value) {
+void LLAddNodeEnd(LLNode **head,int value) {
     printf("\nAdding new node to the end with the value of: %d",value);
     if(*head == NULL) {
-        *head = (node *)malloc(sizeof(node));
+        *head = (LLNode *)malloc(sizeof(LLNode));
         (*head)->value = value;
         (*head)->next = NULL;
         return;
     }
-    node *curr = *head;
+    LLNode *curr = *head;
     while(curr->next != NULL)
         curr = curr->next;
-    node *newNode = malloc(sizeof(node));
+    LLNode *newNode = malloc(sizeof(LLNode));
     if(newNode == NULL) {
         printf("==========\nMemory allocation failed for new node!\n============");
         return;
@@ -25,8 +25,8 @@ void addNodeEnd(node **head,int value) {
     newNode->next = NULL;
     curr->next = newNode;
 }
-void printLinkedList(node *head) {
-    node *curr = head;
+void LLPrintLinkedList(LLNode *head) {
+    LLNode *curr = head;
     printf("\nCurrent Linked List:");
     if(curr == NULL) {
         printf("\nEmpty");
@@ -37,9 +37,9 @@ void printLinkedList(node *head) {
         curr = curr->next;
     }
 }
-void addNodeStart(node **head,int value) {
+void LLAddNodeStart(LLNode **head,int value) {
     printf("\nAdding new node to the start with the value of: %d",value);
-    node *newHead = (node *) malloc(sizeof(node));
+    LLNode *newHead = (LLNode *) malloc(sizeof(LLNode));
     if(newHead == NULL) {
         printf("==========\nMemory allocation failed for new node!\n============");
         return;
@@ -48,10 +48,10 @@ void addNodeStart(node **head,int value) {
     newHead->next = *head;
     *head = newHead;
 }
-void clearLinkedList(node **head) {
+void LLClearLinkedList(LLNode **head) {
     printf("\nClearing linked list");
-    node *curr = *head;
-    node *next = NULL;
+    LLNode *curr = *head;
+    LLNode *next = NULL;
     if(curr == NULL) {
         printf("\nNothing to free!");
         return;
@@ -64,12 +64,12 @@ void clearLinkedList(node **head) {
     *head = NULL;
 }
 
-void removeHead(node **head) {
+void LLRemoveHead(LLNode **head) {
     if(*head == NULL) {
         printf("\nList empty nothing to remove");
         return;
     }
-    node *curr = *head;
+    LLNode *curr = *head;
     if(curr->next != NULL) {
         *head = curr->next;
         curr->next = NULL;
@@ -80,18 +80,18 @@ void removeHead(node **head) {
     free(curr);
 }
 
-void removeEnd(node **head) {
+void LLRemoveEnd(LLNode **head) {
     if(*head == NULL) {
         printf("\nList empty nothing to remove");
         return;
     }
-    node *curr = *head;
+    LLNode *curr = *head;
     if(curr->next == NULL) {
         free(curr);
         *head = NULL;
         return;
     }
-    node *prev = NULL;
+    LLNode *prev = NULL;
     while(curr->next != NULL) {
         prev = curr;
         curr = curr->next;
@@ -102,18 +102,18 @@ void removeEnd(node **head) {
     free(curr);
 }
 
-void removeByIndex(node **head, int index) {
+void LLRemoveByIndex(LLNode **head, int index) {
     if(*head == NULL) {
         printf("\nThe list is empty and cant retrieve a node");
         return;
     }
     if(index == 0) {
-        removeHead(head);
+        LLRemoveHead(head);
         return;
     }
     int position = 0;
-    node *curr = *head;
-    node *prev = NULL;
+    LLNode *curr = *head;
+    LLNode *prev = NULL;
     while(curr->next != NULL) {
         if(position == index) {
             //REMOVE HERE
@@ -131,13 +131,13 @@ void removeByIndex(node **head, int index) {
     printf("\nThe index does not exist in the list");
 }
 
-int getLength(node *head) {
+int LLGetLength(LLNode *head) {
     if(head == NULL) {
         printf("\nThe list is empty");
         return 0;
     }
     int length = 0;
-    node *curr = head;
+    LLNode *curr = head;
     while(curr != NULL) {
         length += 1;
         curr = curr->next;

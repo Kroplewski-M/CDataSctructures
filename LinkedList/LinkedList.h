@@ -1,17 +1,17 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
-typedef struct node{
+typedef struct LLNode{
     int value;
-    struct node *next;
-}node;
+    struct LLNode *next;
+}LLNode;
 
-void addNodeEnd(node **head, int value);
-void printLinkedList(node *head);
-void addNodeStart(node **head, int value);
-void clearLinkedList(node **head);
-void removeHead(node **head);
-void removeEnd(node **head);
-void removeByIndex(node **head, int index);
-int getLength(node *head);
+void LLAddNodeEnd(LLNode **head, int value);
+void LLPrintLinkedList(LLNode *head);
+void LLAddNodeStart(LLNode **head, int value);
+void LLClearLinkedList(LLNode **head);
+void LLRemoveHead(LLNode **head);
+void LLRemoveEnd(LLNode **head);
+void LLRemoveByIndex(LLNode **head, int index);
+int LLGetLength(LLNode *head);
 #endif
