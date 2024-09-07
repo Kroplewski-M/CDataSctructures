@@ -19,10 +19,29 @@ int main(void)
     // LLPrintLinkedList(head);
     // printf("\nsize of list: %d",LLGetLength(head));
     // LLRemoveByIndex(&head,6);
+
     //DOUBLE LINKED LIST
-
     DLLNode *head = NULL;
+    DLLPrint(head);
+    DLLInsertEnd(&head, 5);
+    DLLInsertEnd(&head, 10);
+    DLLInsertEnd(&head, 20);
+    DLLInsertEnd(&head, 30);
+    DLLInsertEnd(&head, 50);
+    DLLPrint(head);
 
+    DLLClear(&head);
+    DLLPrint(head);
 
+    DLLInsertStart(&head, 10);
+    DLLInsertStart(&head, 5);
+    DLLInsertStart(&head, 12);
+    DLLInsertStart(&head, 54);
+    DLLInsertStart(&head, 89);
+    DLLInsertStart(&head, 39);
+    DLLInsertEnd(&head, 50);
+
+    DLLPrint(head);
+    DLLPrintLength(head);
     return 0;
 }
